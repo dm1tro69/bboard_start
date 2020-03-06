@@ -1,14 +1,16 @@
+ 
 {% extends 'base.html' %}
 
 {% block content %}
 <h1>Обьявления</h1>
 
 
+<h2>Рубрика {{ current_rubric.name }}</h2>
+    <br>
 {% for bb in bbs %}
 <div>
-<h2>{{ bb.title }}</h2>
+<h3>{{ bb.title }}</h3>
 <p>{{ bb.content }}</p>
-    <a href="{% url 'rubric' bb.rubric.pk %}">{{ bb.rubric.name }}</a>
 <p>{{ bb.published }}</p>
 </div>
 {% endfor %}

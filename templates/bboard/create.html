@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>добавление обьявления</h1>
+<div>
+
+    {% for rubric in rubrics %}
+        <a href="{% url 'rubric' rubric.pk %}">{{ rubric.name }}</a>
+    {% endfor %}
+
+</div>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="добавить">
+</form>
+{% endblock %}
